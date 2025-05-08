@@ -350,7 +350,7 @@ svi_mapper RamMapper(
 wire [10:0] core_audio;
 
 // Select audio source based on cassette status
-wire [10:0] audio = (cas_status != 0 && !status[4]) ? {svi_audio_in, 10'b0000000000} : audio;
+	wire [10:0] audio = (cas_status != 0 && !status[4]) ? {svi_audio_in, 10'b0000000000} : core_audio;
 	
 `ifdef I2S_AUDIO
 wire [31:0] clk_rate =  32'd42_660_000;
