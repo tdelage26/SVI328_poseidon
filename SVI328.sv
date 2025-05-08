@@ -128,6 +128,7 @@ localparam CONF_STR = {
     "F2,CAS,Cas File;",
     "OF,Tape Input,File,Line;",
     "TD,Rewind Tape;",
+    "O4,Tape Audio,On,Off;",
     "O79,Scandoubler Fx,None,HQ2x,CRT 25%,CRT 50%;",
     "O6,Show border,No,Yes;",
     "O3,Swap joysticks,No,Yes;",
@@ -348,6 +349,9 @@ svi_mapper RamMapper(
 
 wire [10:0] audio;
 
+// Select audio source based on cassette status
+wire [10:0] selected_audio = (cas_status != 0 && !status[4]) ? {svi_audio_in, 10'b0000000000} : audio;
+	
 `ifdef I2S_AUDIO
 wire [31:0] clk_rate =  32'd42_660_000;
 i2s i2s(
@@ -359,8 +363,8 @@ i2s i2s(
     .lrclk(I2S_LRCK),
     .sdata(I2S_DATA),
 
-    .left_chan({audio, 5'b00000}),
-    .right_chan({audio, 5'b00000})
+    .left_chan({selected_audio, 5'b00000}),
+    .right_chan({selected_audio, 5'b00000})
 );
 `endif
 
