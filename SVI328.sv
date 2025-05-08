@@ -347,10 +347,10 @@ svi_mapper RamMapper(
     .ram(isRam)
 );
 
-wire [10:0] audio;
+wire [10:0] core_audio;
 
 // Select audio source based on cassette status
-wire [10:0] audio_src = (cas_status != 0 && !status[4]) ? {svi_audio_in, 10'b0000000000} : audio;
+wire [10:0] audio = (cas_status != 0 && !status[4]) ? {svi_audio_in, 10'b0000000000} : audio;
 	
 `ifdef I2S_AUDIO
 wire [31:0] clk_rate =  32'd42_660_000;
@@ -363,8 +363,8 @@ i2s i2s(
     .lrclk(I2S_LRCK),
     .sdata(I2S_DATA),
 
-    .left_chan({audio_src, 5'b00000}),
-    .right_chan({audio_src, 5'b00000})
+    .left_chan({audio, 5'b00000}),
+    .right_chan({audio, 5'b00000})
 );
 `endif
 
@@ -417,7 +417,7 @@ cv_console console(
     .hblank_o(hblank),
     .vblank_o(vblank),
 
-    .audio_o(audio)
+    .audio_o(core_audio)
 );
 
 wire [1:0] scanlines = status[9:7];
