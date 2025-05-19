@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon May 19 22:02:24 2025
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Revision Name : SVI328_MiST
+Top-level Entity Name : SVI328
+Family : Cyclone III
+Device : EP3C25E144C8
+Timing Models : Final
+Total logic elements : 5,776 / 24,624 ( 23 % )
+    Total combinational functions : 5,521 / 24,624 ( 22 % )
+    Dedicated logic registers : 1,921 / 24,624 ( 8 % )
+Total registers : 1990
+Total pins : 70 / 83 ( 84 % )
+Total virtual pins : 0
+Total memory bits : 221,184 / 608,256 ( 36 % )
+Embedded Multiplier 9-bit elements : 3 / 132 ( 2 % )
+Total PLLs : 1 / 4 ( 25 % )

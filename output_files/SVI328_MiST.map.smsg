@@ -1,0 +1,14 @@
+Info (10281): Verilog HDL Declaration information at jt49.v(47): object "COMP" differs only in case from object "comp" in the same scope
+Info (10281): Verilog HDL Declaration information at jt8255.v(40): object "ACKA" differs only in case from object "acka" in the same scope
+Info (10281): Verilog HDL Declaration information at jt8255.v(41): object "ACKB" differs only in case from object "ackb" in the same scope
+Info (10281): Verilog HDL Declaration information at jt8255.v(40): object "STBA" differs only in case from object "stba" in the same scope
+Info (10281): Verilog HDL Declaration information at jt8255.v(41): object "STBB" differs only in case from object "stbb" in the same scope
+Info (10281): Verilog HDL Declaration information at mist_video.v(65): object "VIDEO_CLEANER" differs only in case from object "video_cleaner" in the same scope
+Info (10281): Verilog HDL Declaration information at mist_video.v(34): object "R" differs only in case from object "r" in the same scope
+Info (10281): Verilog HDL Declaration information at mist_video.v(35): object "G" differs only in case from object "g" in the same scope
+Info (10281): Verilog HDL Declaration information at mist_video.v(36): object "B" differs only in case from object "b" in the same scope
+Info (10281): Verilog HDL Declaration information at mist_dual_video.v(40): object "R" differs only in case from object "r" in the same scope
+Info (10281): Verilog HDL Declaration information at mist_dual_video.v(41): object "G" differs only in case from object "g" in the same scope
+Info (10281): Verilog HDL Declaration information at mist_dual_video.v(42): object "B" differs only in case from object "b" in the same scope
+Info (10281): Verilog HDL Declaration information at mist_dual_video.v(102): object "VIDEO_CLEANER" differs only in case from object "video_cleaner" in the same scope
+Warning (10268): Verilog HDL information at unsigned_division.v(26): always construct contains both blocking and non-blocking assignments

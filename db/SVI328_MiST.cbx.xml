@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="SVI328_MiST">
+		<CBX_INST_ENTRY INSTANCE_NAME="|SVI328|mist_video:mist_video|RGBtoYPbPr:rgb2ypbpr|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_afh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|SVI328|mist_video:mist_video|osd:osd|altsyncram:osd_buffer_rtl_0" CBX_FILE_NAME="altsyncram_4ke1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|SVI328|mist_video:mist_video|scandoubler:scandoubler|scandoubler_linedouble:linedoubler|altsyncram:sd_buffer_rtl_0" CBX_FILE_NAME="altsyncram_r1e1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|SVI328|mist_video:mist_video|scandoubler:scandoubler|scandoubler_linedouble:linedoubler|lpm_mult:Mult2" CBX_FILE_NAME="mult_r8t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|SVI328|mist_video:mist_video|RGBtoYPbPr:rgb2ypbpr|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_bfh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|SVI328|mist_video:mist_video|RGBtoYPbPr:rgb2ypbpr|lpm_mult:Mult4|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_bfh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|SVI328|mist_video:mist_video|RGBtoYPbPr:rgb2ypbpr|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_cfh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|SVI328|mist_video:mist_video|RGBtoYPbPr:rgb2ypbpr|lpm_mult:Mult5|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_bfh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|SVI328|mist_video:mist_video|scandoubler:scandoubler|scandoubler_linedouble:linedoubler|lpm_mult:Mult0" CBX_FILE_NAME="mult_r8t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|SVI328|spram:vram|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_mvr3.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|SVI328|mist_video:mist_video|RGBtoYPbPr:rgb2ypbpr|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_2eh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|SVI328|mist_video:mist_video|scandoubler:scandoubler|scandoubler_linedouble:linedoubler|lpm_mult:Mult1" CBX_FILE_NAME="mult_r8t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|SVI328|pll:pll|altpll:altpll_component" CBX_FILE_NAME="pll_altpll.v"/>
+	</PROJECT>
+</LOG_ROOT>

@@ -1,0 +1,35 @@
+
+State Machine - |SVI328|cassette:CASReader|state
+Name state.LEADLOOP state.READ4 state.READ3 state.READ2 state.READ1 state.NEXT state.START state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 
+state.START 0 0 0 0 0 0 1 1 
+state.NEXT 0 0 0 0 0 1 0 1 
+state.READ1 0 0 0 0 1 0 0 1 
+state.READ2 0 0 0 1 0 0 0 1 
+state.READ3 0 0 1 0 0 0 0 1 
+state.READ4 0 1 0 0 0 0 0 1 
+state.LEADLOOP 1 0 0 0 0 0 0 1 
+
+State Machine - |SVI328|mist_video:mist_video|scandoubler:scandoubler|scandoubler_rotate:rotate|frac_interp:interp_core_h|unsigned_division:div|state
+Name state.IDLE state.FINALISE state.RUN 
+state.IDLE 0 0 0 
+state.RUN 1 0 1 
+state.FINALISE 1 1 0 
+
+State Machine - |SVI328|mist_video:mist_video|scandoubler:scandoubler|scandoubler_rotate:rotate|frac_interp:interp_core_v|unsigned_division:div|state
+Name state.IDLE state.FINALISE state.RUN 
+state.IDLE 0 0 0 
+state.RUN 1 0 1 
+state.FINALISE 1 1 0 
+
+State Machine - |SVI328|cv_console:console|vdp18_core:vdp18_b|vdp18_cpuio:cpu_io_b|state_q
+Name state_q.ST_WR_MODE1_2ND_RWRITE state_q.ST_WR_MODE1_2ND_VWRITE state_q.ST_WR_MODE1_2ND_VREAD state_q.ST_WR_MODE1_1ST_IDLE state_q.ST_WR_MODE1_1ST state_q.ST_RD_MODE1 state_q.ST_WR_MODE0 state_q.ST_RD_MODE0 state_q.ST_IDLE 
+state_q.ST_IDLE 0 0 0 0 0 0 0 0 0 
+state_q.ST_RD_MODE0 0 0 0 0 0 0 0 1 1 
+state_q.ST_WR_MODE0 0 0 0 0 0 0 1 0 1 
+state_q.ST_RD_MODE1 0 0 0 0 0 1 0 0 1 
+state_q.ST_WR_MODE1_1ST 0 0 0 0 1 0 0 0 1 
+state_q.ST_WR_MODE1_1ST_IDLE 0 0 0 1 0 0 0 0 1 
+state_q.ST_WR_MODE1_2ND_VREAD 0 0 1 0 0 0 0 0 1 
+state_q.ST_WR_MODE1_2ND_VWRITE 0 1 0 0 0 0 0 0 1 
+state_q.ST_WR_MODE1_2ND_RWRITE 1 0 0 0 0 0 0 0 1 

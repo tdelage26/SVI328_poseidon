@@ -1,11 +1,15 @@
 module SVI328(       
-    input         CLOCK_50,
-    output LED,
-    output [VGA_BITS-1:0] VGA_R,
-    output [VGA_BITS-1:0] VGA_G,
-    output [VGA_BITS-1:0] VGA_B,
-    output        VGA_HS,
-    output        VGA_VS,
+	input         CLOCK_27,
+`ifdef USE_CLOCK_50
+	input         CLOCK_50,
+`endif
+
+	output        LED,
+	output [VGA_BITS-1:0] VGA_R,
+	output [VGA_BITS-1:0] VGA_G,
+	output [VGA_BITS-1:0] VGA_B,
+	output        VGA_HS,
+	output        VGA_VS,
 
 `ifdef USE_HDMI
     output        HDMI_RST,
@@ -18,7 +22,6 @@ module SVI328(
     output        HDMI_DE,
     inout         HDMI_SDA,
     inout         HDMI_SCL,
-    input         HDMI_INT,
 `endif
 
     input         SPI_SCK,
@@ -142,9 +145,11 @@ wire clk_21m3;
 wire pll_locked;
 
 pll pll(
-    .inclk0(CLOCK_50),
+    .inclk0(CLOCK_27),
     .c0(clk_sys),
+`ifdef USE_HDMI
     .c1(clk_21m3),
+`endif
     .locked(pll_locked)
 );
 
