@@ -10,6 +10,8 @@ module SVI328(
 	output [VGA_BITS-1:0] VGA_B,
 	output        VGA_HS,
 	output        VGA_VS,
+        output        AUDIO_L,
+        output        AUDIO_R,
 
 `ifdef USE_HDMI
     output        HDMI_RST,
@@ -221,7 +223,7 @@ data_io data_io(
 );
 
 
-wire reset = status[0] | (ioctl_download && ioctl_isROM) | in_hard_reset;
+wire reset = status[0] | buttons[1] | (ioctl_download && ioctl_isROM) | in_hard_reset;
 
 wire hard_reset = status[1];
 reg [15:0] cleanup_addr = 16'd0;
@@ -355,7 +357,17 @@ wire [10:0] core_audio;
 
 // Select audio source based on cassette status
 	wire [10:0] audio = (cas_status != 0 && !status[4]) ? {svi_audio_in, 10'b0000000000} : core_audio;
-	
+
+dac #(10) dac_l (
+   .clk_i        (clk_sys),
+   .res_n_i      (1      ),
+   .dac_i        (core_audio),
+   .dac_o        (AUDIO_L)
+);
+
+assign AUDIO_R=AUDIO_L;
+
+
 `ifdef I2S_AUDIO
 wire [31:0] clk_rate =  32'd42_660_000;
 i2s i2s(
