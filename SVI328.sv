@@ -22,6 +22,7 @@ module SVI328(
     output        HDMI_DE,
     inout         HDMI_SDA,
     inout         HDMI_SCL,
+    input         HDMI_INT,
 `endif
 
     input         SPI_SCK,
@@ -147,9 +148,7 @@ wire pll_locked;
 pll pll(
     .inclk0(CLOCK_27),
     .c0(clk_sys),
-`ifdef USE_HDMI
     .c1(clk_21m3),
-`endif
     .locked(pll_locked)
 );
 
